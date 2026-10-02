@@ -14,7 +14,7 @@ public class Exercise06_10 {
         if (number < 2) {
             return false;
         }
-        for (int divisor = 2; divisor <= number / 2; divisor++) {
+        for (int divisor = 2; divisor <= number / divisor; divisor++) {
             if (number % divisor == 0) {
                 return false;
             }
@@ -23,6 +23,9 @@ public class Exercise06_10 {
     }
 
     public static int pairPrime(int n) {
+        if (n < 5) {
+            return 0;
+        }
         int count = 0;
         for (int i = 2; i <= n - 2; i++) {
             if (isPrime(i) && isPrime(i + 2)) {
